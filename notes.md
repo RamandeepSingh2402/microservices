@@ -31,4 +31,22 @@ Building REST API with Spring Boot - Goals:
   - Using appropriate Response Status (200, 404, 500, ....)
   - Understanding REST API Best Practices
     - Thinking from the perspective of your consumer
-    - Validation, Internationalization - i18n, Exception Handling, HATEOAS, Versioning, Documentation, Content Negotiation and a lot more!
+    - Validation, Internationalization - i18n, Exception Handling, HATEOAS, Versioning, Documentation, Content Negotiation and a lot more
+
+
+
+- How are our requests handled?
+ - DispatcherServerlet: Front Controller Pattern
+  - Mapping servlets: dispatcherServerlet urls=[/]
+  - Auto Configuration (DispatcherServletAutoConfiguration)
+
+ - How does HelloWorldBean object get converted to JSON?
+  - @ResponseBody + JacksonHttpMessageConverters
+   - Auto Configuration (JacksonHttpMessageConvertersConfiguration)
+
+ - Who is configuring error-mapping??
+  - Auto Configuration (ErrorMvcAutoConfiguration) 
+
+ - How are all jars available (Spring, Spring MVC, Jackson, Tomcat)?
+  - Starter Projects - Spring Boot Starter Web (spring-webmvc, spring-web, spring-boot-starter-tomcat, spring-boot-starter-json)
+
